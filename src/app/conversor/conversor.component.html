@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="card col-3 position-absolute top-50 start-50 translate-middle text-center text-dark p-3">
+    <div class="card-body">
+      <div class="row">
+        <div class="card-title">
+          <h4>Conversor de Moedas</h4>
+        </div>
+        <label for="infos" class="form-label mb-3">
+          <h6>Insira os valores e cambios</h6>
+        </label>
+        <label for="valorReal" class="form-label"><strong>Valor em Reais:</strong></label>
+        <div class="mb-3">
+          <input [(ngModel)]="real" class="text-center form-control" type="number"
+            placeholder="Insira o valor em reais">
+        </div>
+        <label for="cotacaoDolar" class="form-label"><strong>Cotação Dólar:</strong></label>
+        <div class="mb-3">
+          <input [(ngModel)]="cotacao_dolar" class="text-center form-control" type="number" placeholder="Cotação Dólar">
+        </div>
+        <label for="cotacaoEuro" class="form-label"><strong>Cotação Euro:</strong></label>
+        <div class="mb-3">
+          <input [(ngModel)]="cotacao_euro" class="text-center form-control" type="number" placeholder="Cotação Euro">
+        </div>
+        <label for="cotacaoLibra" class="form-label"><strong>Cotação Libra:</strong></label>
+        <div class="mb-3">
+          <input [(ngModel)]="cotacao_libra" class="text-center form-control" type="number" placeholder="Cotação Libra">
+        </div>
+        <input class="btn btn-info text-white" type="button" value="Converter" (click)="converter()">
+        <input class="btn btn-success mt-3 mb-1" type="button" value="Limpar" (click)="limpar()">
+
+        <strong for="valorDolar" class="mt-1">Dólar:</strong>
+        <p *ngIf="dolar" class="alert alert-success">R${{real.toFixed(2)}} é equivalente a US${{dolar.toFixed(2)}}</p>
+
+
+        <strong for="valorEuro" class="mt-1">Euro:</strong>
+        <p *ngIf="euro" class="alert alert-success">R${{real.toFixed(2)}} é equivalente a €{{euro.toFixed(2)}}</p>
+
+
+        <strong for="valorLibra" class="m-1">Libra:</strong>
+        <p *ngIf="libra" class="alert alert-success">R${{real.toFixed(2)}} é equivalente a £{{libra.toFixed(2)}}</p>
+
+      </div>
+    </div>
+  </div>
+</div>
